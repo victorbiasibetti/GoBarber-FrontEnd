@@ -1,8 +1,8 @@
 import React from 'react'
-import {Swith, Route} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 
-import SignIn from '../pages/SignIn'
-import SignUp from '../pages/SignUp'
+import SingIn from '../pages/SingIn'
+import SingUp from '../pages/SingUp'
 
 
 import Dashboard from '../pages/Dashboard'
@@ -10,12 +10,12 @@ import Profile from '../pages/Profile'
 
 export default function Routes(){
   return (
-    <Swith>
-      <Route exact path="/" componenct={SignIn}/>
-      <Route  path="/register" componenct={SignUp}/>
+    <Switch>
+      <Route exact path="/" componenct={SingIn}/>
+      <Route  path="/register" componenct={SingUp}/>
 
       <Route  path="/dashboard" componenct={Dashboard}/>
       <Route  path="/profile" componenct={Profile}/>
-    </Swith>
+    </Switch>
   )
 }
