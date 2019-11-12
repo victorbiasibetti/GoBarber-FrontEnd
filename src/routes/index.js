@@ -1,21 +1,20 @@
-import React from 'react'
-import {Switch, Route} from 'react-router-dom'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import SingIn from '../pages/SingIn'
-import SingUp from '../pages/SingUp'
+import SignIn from '../pages/SignIn';
+import SignUp from '../pages/SignUp';
 
+import Dashboard from '../pages/Dashboard';
+import Profile from '../pages/Profile';
 
-import Dashboard from '../pages/Dashboard'
-import Profile from '../pages/Profile'
-
-export default function Routes(){
+export default function Routes() {
   return (
     <Switch>
-      <Route exact path="/" componenct={SingIn}/>
-      <Route  path="/register" componenct={SingUp}/>
+      <Route path="/" exact componenct={SignIn} />
+      <Route path="/register" componenct={SignUp} />
 
-      <Route  path="/dashboard" componenct={Dashboard}/>
-      <Route  path="/profile" componenct={Profile}/>
+      <Route path="/dashboard" componenct={Dashboard} isPrivate />
+      <Route path="/profile" componenct={Profile} isPrivate />
     </Switch>
-  )
+  );
 }
