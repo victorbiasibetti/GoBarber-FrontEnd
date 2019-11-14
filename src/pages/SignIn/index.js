@@ -1,8 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Form, Input } from '@rocketseat/unform';
 import logo from '~/assets/logo.svg';
+
+import { signInRequest } from '~/store/modules/auth/actions';
 
 const schema = Yup.object().shape({
   email: Yup.string()
@@ -12,9 +15,12 @@ const schema = Yup.object().shape({
 });
 
 export default function SignIn() {
-  function handleSubmit(data) {
-    console.tron.log(data);
+  const dispatch = useDispatch();
+
+  function handleSubmit({ email, password }) {
+    dispatch(signInRequest(email, password));
   }
+
   return (
     <>
       <img src={logo} alt="GoBarber" />
